@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AuthService } from './../../../auth/services/auth.service';
+import { Component, computed, inject } from '@angular/core';
 
 @Component({
   templateUrl: './dashboar-layout.component.html',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DashboarLayoutComponent {
 
+  private authService = inject( AuthService );
+
+  public user = computed( () => this.authService.currentUser() )
 }
