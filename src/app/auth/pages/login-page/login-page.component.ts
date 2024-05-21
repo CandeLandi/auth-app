@@ -29,12 +29,17 @@ export class LoginPageComponent {
       .subscribe({
         next: () =>
           this.router.navigateByUrl('/dashboard'),
-          
 
 
-    
+
+
         error: (message) => {
-          Swal.fire('Error', message, 'error')
+          Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
         }
       })
   }
