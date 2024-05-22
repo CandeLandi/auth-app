@@ -7,7 +7,14 @@ import { Component, computed, inject } from '@angular/core';
 })
 export class DashboarLayoutComponent {
 
-  private authService = inject( AuthService );
+  private authService = inject(AuthService);
 
-  public user = computed( () => this.authService.currentUser() )
+  public user = computed(() => this.authService.currentUser())
+
+
+
+
+  onLogout() {
+    this.authService.logout();
+  }
 }
