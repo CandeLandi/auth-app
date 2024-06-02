@@ -1,4 +1,4 @@
 export const environment = {
-   baseUrl: 'https://nest-auth-backend-cl.up.railway.app'
+   baseUrl: 'https://angular-nest-auth-backend-production-cf82.up.railway.app/'
 
 }
