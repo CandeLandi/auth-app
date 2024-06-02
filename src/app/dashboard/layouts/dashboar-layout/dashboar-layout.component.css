@@ -1,0 +1,22 @@
+.dashboard-layout-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    padding: 25px;
+  }
+
+}
+
+.btn-container {
+  margin-top: 25px;
+  border: 1px solid rgba(14, 16, 15, 0.729);
+
+  button {
+    padding: 10px;
+  }
+}

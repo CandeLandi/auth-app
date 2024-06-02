@@ -2,6 +2,7 @@ import { AuthService } from './../../../auth/services/auth.service';
 import { Component, computed, inject } from '@angular/core';
 
 @Component({
+  selector: 'dashboard-layout',
   templateUrl: './dashboar-layout.component.html',
   styleUrl: './dashboar-layout.component.css'
 })
@@ -11,10 +12,8 @@ export class DashboarLayoutComponent {
 
   public user = computed(() => this.authService.currentUser())
 
-
-
-
   onLogout() {
     this.authService.logout();
   }
+
 }

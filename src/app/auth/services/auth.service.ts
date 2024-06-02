@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map, of, pipe, tap, throwError } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 import { AuthStatus, CheckTokenResponse } from '../interfaces';
+import { RegisterPayload } from '../interfaces/register-payload';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,10 @@ export class AuthService {
   }
 
 
+
+
+
+
   login(email: string, password: string): Observable<boolean> {
 
     const url = `${this.baseUrl}/auth/login`;
@@ -47,6 +52,24 @@ export class AuthService {
         catchError(err => throwError(() => err.error.message))
       );
   }
+
+
+  register(user: User): Observable<boolean> {
+
+    const url = `${this.baseUrl}/auth/register`;
+
+    return this.http.post<RegisterPayload>(url, user)
+    .pipe(
+      map(({ user, token }) => this.setAuthentication(user, token)),
+      catchError(err => throwError(() => err.error.message))
+    )
+
+
+  }
+
+
+
+
 
   checkAuthStatus(): Observable<boolean> {
 

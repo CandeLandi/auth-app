@@ -1,9 +1,12 @@
-<h1> Dashboard</h1>
+<section class="dashboard-layout-container">
 
-<h3> User </h3>
-<pre> {{ user() | json }}</pre>
+  <h3>Bienvenido/a! {{user()?.name | titlecase }}</h3>
 
-<!-- <span routerLink="/auth/login"> IR A LOGIN</span>
- -->
+  <app-user-card />
 
- <button (click)="onLogout()"> Cerrar sesión </button>
+
+  <div class="btn btn-container">
+    <button (click)="onLogout()"> Cerrar sesión </button>
+  </div>
+
+</section>
