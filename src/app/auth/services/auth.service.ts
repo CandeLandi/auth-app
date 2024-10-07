@@ -37,10 +37,6 @@ export class AuthService {
   }
 
 
-
-
-
-
   login(email: string, password: string): Observable<boolean> {
 
     const url = `${this.baseUrl}/auth/login`;
@@ -64,12 +60,7 @@ export class AuthService {
       catchError(err => throwError(() => err.error.message))
     )
 
-
   }
-
-
-
-
 
   checkAuthStatus(): Observable<boolean> {
 
@@ -93,7 +84,6 @@ export class AuthService {
           return of(false);
         })
       );
-
 
   }
 
